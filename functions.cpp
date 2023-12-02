@@ -52,23 +52,19 @@ void change_elements(ARGS *arg)
     {
         if(!arg->is_fibonacci[i]) continue;
 
-//        if(arg->is_fibonacci[i - 1])
-//        {
-//            a_help[i] = average;
-//            continue;
-//        }
-
         //First
         int j = 0;
-        while(arg->is_fibonacci[i - j - 1])
-            j++;
+        if(i != 0)
+            while(arg->is_fibonacci[i - j - 1] and i - j - 1 >= 0)
+                j++;
 
         first = a[i - j];
 
         //Last
         j = 0;
-        while(arg->is_fibonacci[i + j + 1])
-            j++;
+        if(i != n - 1)
+            while(arg->is_fibonacci[i + j + 1] and j + i + 1 < n)
+                j++;
 
         last = a[i + j];
 
