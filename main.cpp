@@ -38,11 +38,6 @@ int main(int ac, char *av[])
         if(read_a(filename, a, n) == -1)
             return -1;
 
-//        cout << "          ";
-//        for(i = 0; i < n; i++)
-//            printf("%10.3e ", a[i]);
-//        cout << endl;
-
         //Заполним аргументы
         ARGS *args = new ARGS[p];
         bool *is_fibonacci = new bool[n];
@@ -78,15 +73,6 @@ int main(int ac, char *av[])
             if(pthread_join(threads[i], 0))
                 cout << "Cannot wait thread " << i << endl;
         }
-
-//        for(i = 0; i < n; i++)
-//        {
-//            if(args[0].is_fibonacci[i])
-//                cout << 1 << " ";
-//            else
-//                cout << 0 << " ";
-//        }
-//        cout << endl;
 
         cout << "RESULT " << p << ": ";
         for(i = 0; i < n; i++)
